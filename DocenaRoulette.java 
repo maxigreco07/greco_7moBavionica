@@ -1,0 +1,37 @@
+import java.util.Scanner;
+
+public class DocenaRoulette {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Solicitar el número al usuario
+        System.out.print("Ingrese un número entre 1 y 36: ");
+        int numero = scanner.nextInt();
+
+        // Versión con operadores AND (&&)
+        System.out.println("\n--- Usando operadores AND ---");
+        if (numero >= 1 && numero <= 12) {
+            System.out.println("El número " + numero + " pertenece a la PRIMER docena (1-12)");
+        } else if (numero >= 13 && numero <= 24) {
+            System.out.println("El número " + numero + " pertenece a la SEGUNDA docena (13-24)");
+        } else if (numero >= 25 && numero <= 36) {
+            System.out.println("El número " + numero + " pertenece a la TERCER docena (25-36)");
+        } else {
+            System.out.println("El número " + numero + " está fuera de rango");
+        }
+
+        // Versión con operadores OR (||)
+        System.out.println("\n--- Usando operadores OR ---");
+        if (numero < 1 || numero > 36) {
+            System.out.println("El número " + numero + " está fuera de rango");
+        } else {
+            if (numero <= 12) {
+                System.out.println("El número " + numero + " pertenece a la PRIMER docena (1-12)");
+            } else if (numero <= 24) {
+                System.out.println("El número " + numero + " pertenece a la SEGUNDA docena (13-24)");
+            } else {
+                System.out.println("El número " + numero + " pertenece a la TERCER docena (25-36)");
+            }
+        }
+    }
+}
